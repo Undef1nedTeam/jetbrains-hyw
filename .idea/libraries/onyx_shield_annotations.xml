@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="onyx-shield-annotations">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/annotations/onyx-shield-annotations.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/annotations/onyx-shield-annotations-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
