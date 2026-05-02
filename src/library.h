@@ -1,0 +1,6 @@
+#ifndef JETBRAINS_DEV_LIBRARY_H
+#define JETBRAINS_DEV_LIBRARY_H
+
+void hello();
+
+#endif // JETBRAINS_DEV_LIBRARY_H
