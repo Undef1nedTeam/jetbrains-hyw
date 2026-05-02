@@ -17,7 +17,7 @@ set(INJECT_SOURCES
         src/utils/console.h
         src/utils/pattern.cpp
         src/utils/pattern.h
-        src/hooks/impl/test_hook.h
+        src/hooks/impl/load_library_hook.h
         src/features/feature.cpp
         src/features/feature.h
         src/features/feature_manager.cpp
@@ -31,7 +31,7 @@ set(INJECT_SOURCES
         src/features/impl/crash_logger.cpp
         src/features/impl/crash_logger.h
         src/utils/hex.h
-        src/hooks/impl/test_hook.cpp
+        src/hooks/impl/load_library_hook.cpp
 )
 
 add_library(winmm SHARED ${INJECT_SOURCES})

@@ -1,4 +1,4 @@
-#include "test_hook.h"
+#include "load_library_hook.h"
 
 #include "environment.h"
 #include "titan_hook.h"
@@ -17,7 +17,7 @@ static HMODULE WINAPI HookLoadLibraryW(LPCWSTR lpLibFileName)
     return real(lpLibFileName);
 }
 
-bool test_hook::enable()
+bool load_library_hook::enable()
 {
     const std::string OK = "&aok";
     const std::string FAILED = "&cfailed";

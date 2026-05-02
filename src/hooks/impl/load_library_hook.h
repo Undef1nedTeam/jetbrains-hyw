@@ -7,7 +7,7 @@
 #include "hooks/hook.h"
 
 
-class test_hook : public hook
+class load_library_hook : public hook
 {
     void install();
 

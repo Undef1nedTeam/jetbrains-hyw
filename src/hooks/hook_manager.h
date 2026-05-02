@@ -9,7 +9,7 @@
 #include <unordered_map>
 
 #include "hook.h"
-#include "impl/test_hook.h"
+#include "impl/load_library_hook.h"
 #include "logger/logger.h"
 
 
@@ -30,7 +30,7 @@ private:
 public:
     void init()
     {
-        register_hook<test_hook>();
+        register_hook<load_library_hook>();
 
         for (auto it = hooks.begin(); it != hooks.end(); ++it)
         {
