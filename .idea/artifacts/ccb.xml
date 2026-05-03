@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ccb">
+    <output-path>$PROJECT_DIR$/out/artifacts/ccb</output-path>
+    <root id="archive" name="ccb.jar">
+      <element id="module-output" name="jetbrains_dev" />
+    </root>
+  </artifact>
+</component>
