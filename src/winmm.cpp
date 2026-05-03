@@ -1,4 +1,3 @@
-
 //
 // created by AheadLib
 // github:https://github.com/strivexjun/AheadLib-x86-x64
@@ -6,6 +5,8 @@
 
 #include <windows.h>
 #include <Shlwapi.h>
+
+#include "utils/console.h"
 
 #pragma comment( lib, "Shlwapi.lib")
 
@@ -192,189 +193,188 @@
 #pragma comment(linker, "/EXPORT:waveOutWrite=AheadLib_waveOutWrite,@182")
 
 
-extern "C"
-{
-	PVOID pfnAheadLib_Unnamed2;
-	PVOID pfnAheadLib_mciExecute;
-	PVOID pfnAheadLib_CloseDriver;
-	PVOID pfnAheadLib_DefDriverProc;
-	PVOID pfnAheadLib_DriverCallback;
-	PVOID pfnAheadLib_DrvGetModuleHandle;
-	PVOID pfnAheadLib_GetDriverModuleHandle;
-	PVOID pfnAheadLib_OpenDriver;
-	PVOID pfnAheadLib_PlaySound;
-	PVOID pfnAheadLib_PlaySoundA;
-	PVOID pfnAheadLib_PlaySoundW;
-	PVOID pfnAheadLib_SendDriverMessage;
-	PVOID pfnAheadLib_WOWAppExit;
-	PVOID pfnAheadLib_auxGetDevCapsA;
-	PVOID pfnAheadLib_auxGetDevCapsW;
-	PVOID pfnAheadLib_auxGetNumDevs;
-	PVOID pfnAheadLib_auxGetVolume;
-	PVOID pfnAheadLib_auxOutMessage;
-	PVOID pfnAheadLib_auxSetVolume;
-	PVOID pfnAheadLib_joyConfigChanged;
-	PVOID pfnAheadLib_joyGetDevCapsA;
-	PVOID pfnAheadLib_joyGetDevCapsW;
-	PVOID pfnAheadLib_joyGetNumDevs;
-	PVOID pfnAheadLib_joyGetPos;
-	PVOID pfnAheadLib_joyGetPosEx;
-	PVOID pfnAheadLib_joyGetThreshold;
-	PVOID pfnAheadLib_joyReleaseCapture;
-	PVOID pfnAheadLib_joySetCapture;
-	PVOID pfnAheadLib_joySetThreshold;
-	PVOID pfnAheadLib_mciDriverNotify;
-	PVOID pfnAheadLib_mciDriverYield;
-	PVOID pfnAheadLib_mciFreeCommandResource;
-	PVOID pfnAheadLib_mciGetCreatorTask;
-	PVOID pfnAheadLib_mciGetDeviceIDA;
-	PVOID pfnAheadLib_mciGetDeviceIDFromElementIDA;
-	PVOID pfnAheadLib_mciGetDeviceIDFromElementIDW;
-	PVOID pfnAheadLib_mciGetDeviceIDW;
-	PVOID pfnAheadLib_mciGetDriverData;
-	PVOID pfnAheadLib_mciGetErrorStringA;
-	PVOID pfnAheadLib_mciGetErrorStringW;
-	PVOID pfnAheadLib_mciGetYieldProc;
-	PVOID pfnAheadLib_mciLoadCommandResource;
-	PVOID pfnAheadLib_mciSendCommandA;
-	PVOID pfnAheadLib_mciSendCommandW;
-	PVOID pfnAheadLib_mciSendStringA;
-	PVOID pfnAheadLib_mciSendStringW;
-	PVOID pfnAheadLib_mciSetDriverData;
-	PVOID pfnAheadLib_mciSetYieldProc;
-	PVOID pfnAheadLib_midiConnect;
-	PVOID pfnAheadLib_midiDisconnect;
-	PVOID pfnAheadLib_midiInAddBuffer;
-	PVOID pfnAheadLib_midiInClose;
-	PVOID pfnAheadLib_midiInGetDevCapsA;
-	PVOID pfnAheadLib_midiInGetDevCapsW;
-	PVOID pfnAheadLib_midiInGetErrorTextA;
-	PVOID pfnAheadLib_midiInGetErrorTextW;
-	PVOID pfnAheadLib_midiInGetID;
-	PVOID pfnAheadLib_midiInGetNumDevs;
-	PVOID pfnAheadLib_midiInMessage;
-	PVOID pfnAheadLib_midiInOpen;
-	PVOID pfnAheadLib_midiInPrepareHeader;
-	PVOID pfnAheadLib_midiInReset;
-	PVOID pfnAheadLib_midiInStart;
-	PVOID pfnAheadLib_midiInStop;
-	PVOID pfnAheadLib_midiInUnprepareHeader;
-	PVOID pfnAheadLib_midiOutCacheDrumPatches;
-	PVOID pfnAheadLib_midiOutCachePatches;
-	PVOID pfnAheadLib_midiOutClose;
-	PVOID pfnAheadLib_midiOutGetDevCapsA;
-	PVOID pfnAheadLib_midiOutGetDevCapsW;
-	PVOID pfnAheadLib_midiOutGetErrorTextA;
-	PVOID pfnAheadLib_midiOutGetErrorTextW;
-	PVOID pfnAheadLib_midiOutGetID;
-	PVOID pfnAheadLib_midiOutGetNumDevs;
-	PVOID pfnAheadLib_midiOutGetVolume;
-	PVOID pfnAheadLib_midiOutLongMsg;
-	PVOID pfnAheadLib_midiOutMessage;
-	PVOID pfnAheadLib_midiOutOpen;
-	PVOID pfnAheadLib_midiOutPrepareHeader;
-	PVOID pfnAheadLib_midiOutReset;
-	PVOID pfnAheadLib_midiOutSetVolume;
-	PVOID pfnAheadLib_midiOutShortMsg;
-	PVOID pfnAheadLib_midiOutUnprepareHeader;
-	PVOID pfnAheadLib_midiStreamClose;
-	PVOID pfnAheadLib_midiStreamOpen;
-	PVOID pfnAheadLib_midiStreamOut;
-	PVOID pfnAheadLib_midiStreamPause;
-	PVOID pfnAheadLib_midiStreamPosition;
-	PVOID pfnAheadLib_midiStreamProperty;
-	PVOID pfnAheadLib_midiStreamRestart;
-	PVOID pfnAheadLib_midiStreamStop;
-	PVOID pfnAheadLib_mixerClose;
-	PVOID pfnAheadLib_mixerGetControlDetailsA;
-	PVOID pfnAheadLib_mixerGetControlDetailsW;
-	PVOID pfnAheadLib_mixerGetDevCapsA;
-	PVOID pfnAheadLib_mixerGetDevCapsW;
-	PVOID pfnAheadLib_mixerGetID;
-	PVOID pfnAheadLib_mixerGetLineControlsA;
-	PVOID pfnAheadLib_mixerGetLineControlsW;
-	PVOID pfnAheadLib_mixerGetLineInfoA;
-	PVOID pfnAheadLib_mixerGetLineInfoW;
-	PVOID pfnAheadLib_mixerGetNumDevs;
-	PVOID pfnAheadLib_mixerMessage;
-	PVOID pfnAheadLib_mixerOpen;
-	PVOID pfnAheadLib_mixerSetControlDetails;
-	PVOID pfnAheadLib_mmDrvInstall;
-	PVOID pfnAheadLib_mmGetCurrentTask;
-	PVOID pfnAheadLib_mmTaskBlock;
-	PVOID pfnAheadLib_mmTaskCreate;
-	PVOID pfnAheadLib_mmTaskSignal;
-	PVOID pfnAheadLib_mmTaskYield;
-	PVOID pfnAheadLib_mmioAdvance;
-	PVOID pfnAheadLib_mmioAscend;
-	PVOID pfnAheadLib_mmioClose;
-	PVOID pfnAheadLib_mmioCreateChunk;
-	PVOID pfnAheadLib_mmioDescend;
-	PVOID pfnAheadLib_mmioFlush;
-	PVOID pfnAheadLib_mmioGetInfo;
-	PVOID pfnAheadLib_mmioInstallIOProcA;
-	PVOID pfnAheadLib_mmioInstallIOProcW;
-	PVOID pfnAheadLib_mmioOpenA;
-	PVOID pfnAheadLib_mmioOpenW;
-	PVOID pfnAheadLib_mmioRead;
-	PVOID pfnAheadLib_mmioRenameA;
-	PVOID pfnAheadLib_mmioRenameW;
-	PVOID pfnAheadLib_mmioSeek;
-	PVOID pfnAheadLib_mmioSendMessage;
-	PVOID pfnAheadLib_mmioSetBuffer;
-	PVOID pfnAheadLib_mmioSetInfo;
-	PVOID pfnAheadLib_mmioStringToFOURCCA;
-	PVOID pfnAheadLib_mmioStringToFOURCCW;
-	PVOID pfnAheadLib_mmioWrite;
-	PVOID pfnAheadLib_mmsystemGetVersion;
-	PVOID pfnAheadLib_sndPlaySoundA;
-	PVOID pfnAheadLib_sndPlaySoundW;
-	PVOID pfnAheadLib_timeBeginPeriod;
-	PVOID pfnAheadLib_timeEndPeriod;
-	PVOID pfnAheadLib_timeGetDevCaps;
-	PVOID pfnAheadLib_timeGetSystemTime;
-	PVOID pfnAheadLib_timeGetTime;
-	PVOID pfnAheadLib_timeKillEvent;
-	PVOID pfnAheadLib_timeSetEvent;
-	PVOID pfnAheadLib_waveInAddBuffer;
-	PVOID pfnAheadLib_waveInClose;
-	PVOID pfnAheadLib_waveInGetDevCapsA;
-	PVOID pfnAheadLib_waveInGetDevCapsW;
-	PVOID pfnAheadLib_waveInGetErrorTextA;
-	PVOID pfnAheadLib_waveInGetErrorTextW;
-	PVOID pfnAheadLib_waveInGetID;
-	PVOID pfnAheadLib_waveInGetNumDevs;
-	PVOID pfnAheadLib_waveInGetPosition;
-	PVOID pfnAheadLib_waveInMessage;
-	PVOID pfnAheadLib_waveInOpen;
-	PVOID pfnAheadLib_waveInPrepareHeader;
-	PVOID pfnAheadLib_waveInReset;
-	PVOID pfnAheadLib_waveInStart;
-	PVOID pfnAheadLib_waveInStop;
-	PVOID pfnAheadLib_waveInUnprepareHeader;
-	PVOID pfnAheadLib_waveOutBreakLoop;
-	PVOID pfnAheadLib_waveOutClose;
-	PVOID pfnAheadLib_waveOutGetDevCapsA;
-	PVOID pfnAheadLib_waveOutGetDevCapsW;
-	PVOID pfnAheadLib_waveOutGetErrorTextA;
-	PVOID pfnAheadLib_waveOutGetErrorTextW;
-	PVOID pfnAheadLib_waveOutGetID;
-	PVOID pfnAheadLib_waveOutGetNumDevs;
-	PVOID pfnAheadLib_waveOutGetPitch;
-	PVOID pfnAheadLib_waveOutGetPlaybackRate;
-	PVOID pfnAheadLib_waveOutGetPosition;
-	PVOID pfnAheadLib_waveOutGetVolume;
-	PVOID pfnAheadLib_waveOutMessage;
-	PVOID pfnAheadLib_waveOutOpen;
-	PVOID pfnAheadLib_waveOutPause;
-	PVOID pfnAheadLib_waveOutPrepareHeader;
-	PVOID pfnAheadLib_waveOutReset;
-	PVOID pfnAheadLib_waveOutRestart;
-	PVOID pfnAheadLib_waveOutSetPitch;
-	PVOID pfnAheadLib_waveOutSetPlaybackRate;
-	PVOID pfnAheadLib_waveOutSetVolume;
-	PVOID pfnAheadLib_waveOutUnprepareHeader;
-	PVOID pfnAheadLib_waveOutWrite;
+extern "C" {
+PVOID pfnAheadLib_Unnamed2;
+PVOID pfnAheadLib_mciExecute;
+PVOID pfnAheadLib_CloseDriver;
+PVOID pfnAheadLib_DefDriverProc;
+PVOID pfnAheadLib_DriverCallback;
+PVOID pfnAheadLib_DrvGetModuleHandle;
+PVOID pfnAheadLib_GetDriverModuleHandle;
+PVOID pfnAheadLib_OpenDriver;
+PVOID pfnAheadLib_PlaySound;
+PVOID pfnAheadLib_PlaySoundA;
+PVOID pfnAheadLib_PlaySoundW;
+PVOID pfnAheadLib_SendDriverMessage;
+PVOID pfnAheadLib_WOWAppExit;
+PVOID pfnAheadLib_auxGetDevCapsA;
+PVOID pfnAheadLib_auxGetDevCapsW;
+PVOID pfnAheadLib_auxGetNumDevs;
+PVOID pfnAheadLib_auxGetVolume;
+PVOID pfnAheadLib_auxOutMessage;
+PVOID pfnAheadLib_auxSetVolume;
+PVOID pfnAheadLib_joyConfigChanged;
+PVOID pfnAheadLib_joyGetDevCapsA;
+PVOID pfnAheadLib_joyGetDevCapsW;
+PVOID pfnAheadLib_joyGetNumDevs;
+PVOID pfnAheadLib_joyGetPos;
+PVOID pfnAheadLib_joyGetPosEx;
+PVOID pfnAheadLib_joyGetThreshold;
+PVOID pfnAheadLib_joyReleaseCapture;
+PVOID pfnAheadLib_joySetCapture;
+PVOID pfnAheadLib_joySetThreshold;
+PVOID pfnAheadLib_mciDriverNotify;
+PVOID pfnAheadLib_mciDriverYield;
+PVOID pfnAheadLib_mciFreeCommandResource;
+PVOID pfnAheadLib_mciGetCreatorTask;
+PVOID pfnAheadLib_mciGetDeviceIDA;
+PVOID pfnAheadLib_mciGetDeviceIDFromElementIDA;
+PVOID pfnAheadLib_mciGetDeviceIDFromElementIDW;
+PVOID pfnAheadLib_mciGetDeviceIDW;
+PVOID pfnAheadLib_mciGetDriverData;
+PVOID pfnAheadLib_mciGetErrorStringA;
+PVOID pfnAheadLib_mciGetErrorStringW;
+PVOID pfnAheadLib_mciGetYieldProc;
+PVOID pfnAheadLib_mciLoadCommandResource;
+PVOID pfnAheadLib_mciSendCommandA;
+PVOID pfnAheadLib_mciSendCommandW;
+PVOID pfnAheadLib_mciSendStringA;
+PVOID pfnAheadLib_mciSendStringW;
+PVOID pfnAheadLib_mciSetDriverData;
+PVOID pfnAheadLib_mciSetYieldProc;
+PVOID pfnAheadLib_midiConnect;
+PVOID pfnAheadLib_midiDisconnect;
+PVOID pfnAheadLib_midiInAddBuffer;
+PVOID pfnAheadLib_midiInClose;
+PVOID pfnAheadLib_midiInGetDevCapsA;
+PVOID pfnAheadLib_midiInGetDevCapsW;
+PVOID pfnAheadLib_midiInGetErrorTextA;
+PVOID pfnAheadLib_midiInGetErrorTextW;
+PVOID pfnAheadLib_midiInGetID;
+PVOID pfnAheadLib_midiInGetNumDevs;
+PVOID pfnAheadLib_midiInMessage;
+PVOID pfnAheadLib_midiInOpen;
+PVOID pfnAheadLib_midiInPrepareHeader;
+PVOID pfnAheadLib_midiInReset;
+PVOID pfnAheadLib_midiInStart;
+PVOID pfnAheadLib_midiInStop;
+PVOID pfnAheadLib_midiInUnprepareHeader;
+PVOID pfnAheadLib_midiOutCacheDrumPatches;
+PVOID pfnAheadLib_midiOutCachePatches;
+PVOID pfnAheadLib_midiOutClose;
+PVOID pfnAheadLib_midiOutGetDevCapsA;
+PVOID pfnAheadLib_midiOutGetDevCapsW;
+PVOID pfnAheadLib_midiOutGetErrorTextA;
+PVOID pfnAheadLib_midiOutGetErrorTextW;
+PVOID pfnAheadLib_midiOutGetID;
+PVOID pfnAheadLib_midiOutGetNumDevs;
+PVOID pfnAheadLib_midiOutGetVolume;
+PVOID pfnAheadLib_midiOutLongMsg;
+PVOID pfnAheadLib_midiOutMessage;
+PVOID pfnAheadLib_midiOutOpen;
+PVOID pfnAheadLib_midiOutPrepareHeader;
+PVOID pfnAheadLib_midiOutReset;
+PVOID pfnAheadLib_midiOutSetVolume;
+PVOID pfnAheadLib_midiOutShortMsg;
+PVOID pfnAheadLib_midiOutUnprepareHeader;
+PVOID pfnAheadLib_midiStreamClose;
+PVOID pfnAheadLib_midiStreamOpen;
+PVOID pfnAheadLib_midiStreamOut;
+PVOID pfnAheadLib_midiStreamPause;
+PVOID pfnAheadLib_midiStreamPosition;
+PVOID pfnAheadLib_midiStreamProperty;
+PVOID pfnAheadLib_midiStreamRestart;
+PVOID pfnAheadLib_midiStreamStop;
+PVOID pfnAheadLib_mixerClose;
+PVOID pfnAheadLib_mixerGetControlDetailsA;
+PVOID pfnAheadLib_mixerGetControlDetailsW;
+PVOID pfnAheadLib_mixerGetDevCapsA;
+PVOID pfnAheadLib_mixerGetDevCapsW;
+PVOID pfnAheadLib_mixerGetID;
+PVOID pfnAheadLib_mixerGetLineControlsA;
+PVOID pfnAheadLib_mixerGetLineControlsW;
+PVOID pfnAheadLib_mixerGetLineInfoA;
+PVOID pfnAheadLib_mixerGetLineInfoW;
+PVOID pfnAheadLib_mixerGetNumDevs;
+PVOID pfnAheadLib_mixerMessage;
+PVOID pfnAheadLib_mixerOpen;
+PVOID pfnAheadLib_mixerSetControlDetails;
+PVOID pfnAheadLib_mmDrvInstall;
+PVOID pfnAheadLib_mmGetCurrentTask;
+PVOID pfnAheadLib_mmTaskBlock;
+PVOID pfnAheadLib_mmTaskCreate;
+PVOID pfnAheadLib_mmTaskSignal;
+PVOID pfnAheadLib_mmTaskYield;
+PVOID pfnAheadLib_mmioAdvance;
+PVOID pfnAheadLib_mmioAscend;
+PVOID pfnAheadLib_mmioClose;
+PVOID pfnAheadLib_mmioCreateChunk;
+PVOID pfnAheadLib_mmioDescend;
+PVOID pfnAheadLib_mmioFlush;
+PVOID pfnAheadLib_mmioGetInfo;
+PVOID pfnAheadLib_mmioInstallIOProcA;
+PVOID pfnAheadLib_mmioInstallIOProcW;
+PVOID pfnAheadLib_mmioOpenA;
+PVOID pfnAheadLib_mmioOpenW;
+PVOID pfnAheadLib_mmioRead;
+PVOID pfnAheadLib_mmioRenameA;
+PVOID pfnAheadLib_mmioRenameW;
+PVOID pfnAheadLib_mmioSeek;
+PVOID pfnAheadLib_mmioSendMessage;
+PVOID pfnAheadLib_mmioSetBuffer;
+PVOID pfnAheadLib_mmioSetInfo;
+PVOID pfnAheadLib_mmioStringToFOURCCA;
+PVOID pfnAheadLib_mmioStringToFOURCCW;
+PVOID pfnAheadLib_mmioWrite;
+PVOID pfnAheadLib_mmsystemGetVersion;
+PVOID pfnAheadLib_sndPlaySoundA;
+PVOID pfnAheadLib_sndPlaySoundW;
+PVOID pfnAheadLib_timeBeginPeriod;
+PVOID pfnAheadLib_timeEndPeriod;
+PVOID pfnAheadLib_timeGetDevCaps;
+PVOID pfnAheadLib_timeGetSystemTime;
+PVOID pfnAheadLib_timeGetTime;
+PVOID pfnAheadLib_timeKillEvent;
+PVOID pfnAheadLib_timeSetEvent;
+PVOID pfnAheadLib_waveInAddBuffer;
+PVOID pfnAheadLib_waveInClose;
+PVOID pfnAheadLib_waveInGetDevCapsA;
+PVOID pfnAheadLib_waveInGetDevCapsW;
+PVOID pfnAheadLib_waveInGetErrorTextA;
+PVOID pfnAheadLib_waveInGetErrorTextW;
+PVOID pfnAheadLib_waveInGetID;
+PVOID pfnAheadLib_waveInGetNumDevs;
+PVOID pfnAheadLib_waveInGetPosition;
+PVOID pfnAheadLib_waveInMessage;
+PVOID pfnAheadLib_waveInOpen;
+PVOID pfnAheadLib_waveInPrepareHeader;
+PVOID pfnAheadLib_waveInReset;
+PVOID pfnAheadLib_waveInStart;
+PVOID pfnAheadLib_waveInStop;
+PVOID pfnAheadLib_waveInUnprepareHeader;
+PVOID pfnAheadLib_waveOutBreakLoop;
+PVOID pfnAheadLib_waveOutClose;
+PVOID pfnAheadLib_waveOutGetDevCapsA;
+PVOID pfnAheadLib_waveOutGetDevCapsW;
+PVOID pfnAheadLib_waveOutGetErrorTextA;
+PVOID pfnAheadLib_waveOutGetErrorTextW;
+PVOID pfnAheadLib_waveOutGetID;
+PVOID pfnAheadLib_waveOutGetNumDevs;
+PVOID pfnAheadLib_waveOutGetPitch;
+PVOID pfnAheadLib_waveOutGetPlaybackRate;
+PVOID pfnAheadLib_waveOutGetPosition;
+PVOID pfnAheadLib_waveOutGetVolume;
+PVOID pfnAheadLib_waveOutMessage;
+PVOID pfnAheadLib_waveOutOpen;
+PVOID pfnAheadLib_waveOutPause;
+PVOID pfnAheadLib_waveOutPrepareHeader;
+PVOID pfnAheadLib_waveOutReset;
+PVOID pfnAheadLib_waveOutRestart;
+PVOID pfnAheadLib_waveOutSetPitch;
+PVOID pfnAheadLib_waveOutSetPlaybackRate;
+PVOID pfnAheadLib_waveOutSetVolume;
+PVOID pfnAheadLib_waveOutUnprepareHeader;
+PVOID pfnAheadLib_waveOutWrite;
 }
 
 
@@ -383,239 +383,239 @@ HMODULE g_OldModule = NULL;
 
 VOID WINAPI Free()
 {
-	if (g_OldModule)
-	{
-		FreeLibrary(g_OldModule);
-	}
+    if (g_OldModule)
+    {
+        FreeLibrary(g_OldModule);
+    }
 }
 
 
 BOOL WINAPI Load()
 {
-	TCHAR tzPath[MAX_PATH];
-	TCHAR tzTemp[MAX_PATH * 2];
+    TCHAR tzPath[MAX_PATH];
+    TCHAR tzTemp[MAX_PATH * 2];
 
-	GetSystemDirectory(tzPath, MAX_PATH);
+    GetSystemDirectory(tzPath, MAX_PATH);
 
-	lstrcat(tzPath, TEXT("\\winmm.dll"));
+    lstrcat(tzPath, TEXT("\\winmm.dll"));
 
-	g_OldModule = LoadLibrary(tzPath);
-	if (g_OldModule == NULL)
-	{
-		wsprintf(tzTemp, TEXT("module %s not found."), tzPath);
-		MessageBox(NULL, tzTemp, TEXT("AheadLib"), MB_ICONSTOP);
-	}
+    g_OldModule = LoadLibrary(tzPath);
+    if (g_OldModule == NULL)
+    {
+        wsprintf(tzTemp, TEXT("module %s not found."), tzPath);
+        MessageBox(NULL, tzTemp, TEXT("AheadLib"), MB_ICONSTOP);
+    }
 
-	return (g_OldModule != NULL);
+    return (g_OldModule != NULL);
 }
 
 
 FARPROC WINAPI GetAddress(PCSTR pszProcName)
 {
-	FARPROC fpAddress;
-	CHAR szProcName[64];
-	TCHAR tzTemp[MAX_PATH];
+    FARPROC fpAddress;
+    CHAR szProcName[64];
+    TCHAR tzTemp[MAX_PATH];
 
-	fpAddress = GetProcAddress(g_OldModule, pszProcName);
-	if (fpAddress == NULL)
-	{
-		if (HIWORD(pszProcName) == 0)
-		{
-			wsprintfA(szProcName, "#%d", pszProcName);
-			pszProcName = szProcName;
-		}
+    fpAddress = GetProcAddress(g_OldModule, pszProcName);
+    if (fpAddress == NULL)
+    {
+        if (HIWORD(pszProcName) == 0)
+        {
+            wsprintfA(szProcName, "#%d", pszProcName);
+            pszProcName = szProcName;
+        }
 
-		wsprintf(tzTemp, TEXT("无法找到函数 %hs,程序无法正常运行"), pszProcName);
-		MessageBox(NULL, tzTemp, TEXT("AheadLib"), MB_ICONSTOP);
-		ExitProcess(-2);
-	}
-	return fpAddress;
+        wsprintf(tzTemp, TEXT("无法找到函数 %hs,程序无法正常运行"), pszProcName);
+        MessageBox(NULL, tzTemp, TEXT("AheadLib"), MB_ICONSTOP);
+        ExitProcess(-2);
+    }
+    return fpAddress;
 }
 
 BOOL WINAPI Init()
 {
-	pfnAheadLib_Unnamed2 = GetAddress(MAKEINTRESOURCEA(2));
-	pfnAheadLib_mciExecute = GetAddress("mciExecute");
-	pfnAheadLib_CloseDriver = GetAddress("CloseDriver");
-	pfnAheadLib_DefDriverProc = GetAddress("DefDriverProc");
-	pfnAheadLib_DriverCallback = GetAddress("DriverCallback");
-	pfnAheadLib_DrvGetModuleHandle = GetAddress("DrvGetModuleHandle");
-	pfnAheadLib_GetDriverModuleHandle = GetAddress("GetDriverModuleHandle");
-	pfnAheadLib_OpenDriver = GetAddress("OpenDriver");
-	pfnAheadLib_PlaySound = GetAddress("PlaySound");
-	pfnAheadLib_PlaySoundA = GetAddress("PlaySoundA");
-	pfnAheadLib_PlaySoundW = GetAddress("PlaySoundW");
-	pfnAheadLib_SendDriverMessage = GetAddress("SendDriverMessage");
-	pfnAheadLib_WOWAppExit = GetAddress("WOWAppExit");
-	pfnAheadLib_auxGetDevCapsA = GetAddress("auxGetDevCapsA");
-	pfnAheadLib_auxGetDevCapsW = GetAddress("auxGetDevCapsW");
-	pfnAheadLib_auxGetNumDevs = GetAddress("auxGetNumDevs");
-	pfnAheadLib_auxGetVolume = GetAddress("auxGetVolume");
-	pfnAheadLib_auxOutMessage = GetAddress("auxOutMessage");
-	pfnAheadLib_auxSetVolume = GetAddress("auxSetVolume");
-	pfnAheadLib_joyConfigChanged = GetAddress("joyConfigChanged");
-	pfnAheadLib_joyGetDevCapsA = GetAddress("joyGetDevCapsA");
-	pfnAheadLib_joyGetDevCapsW = GetAddress("joyGetDevCapsW");
-	pfnAheadLib_joyGetNumDevs = GetAddress("joyGetNumDevs");
-	pfnAheadLib_joyGetPos = GetAddress("joyGetPos");
-	pfnAheadLib_joyGetPosEx = GetAddress("joyGetPosEx");
-	pfnAheadLib_joyGetThreshold = GetAddress("joyGetThreshold");
-	pfnAheadLib_joyReleaseCapture = GetAddress("joyReleaseCapture");
-	pfnAheadLib_joySetCapture = GetAddress("joySetCapture");
-	pfnAheadLib_joySetThreshold = GetAddress("joySetThreshold");
-	pfnAheadLib_mciDriverNotify = GetAddress("mciDriverNotify");
-	pfnAheadLib_mciDriverYield = GetAddress("mciDriverYield");
-	pfnAheadLib_mciFreeCommandResource = GetAddress("mciFreeCommandResource");
-	pfnAheadLib_mciGetCreatorTask = GetAddress("mciGetCreatorTask");
-	pfnAheadLib_mciGetDeviceIDA = GetAddress("mciGetDeviceIDA");
-	pfnAheadLib_mciGetDeviceIDFromElementIDA = GetAddress("mciGetDeviceIDFromElementIDA");
-	pfnAheadLib_mciGetDeviceIDFromElementIDW = GetAddress("mciGetDeviceIDFromElementIDW");
-	pfnAheadLib_mciGetDeviceIDW = GetAddress("mciGetDeviceIDW");
-	pfnAheadLib_mciGetDriverData = GetAddress("mciGetDriverData");
-	pfnAheadLib_mciGetErrorStringA = GetAddress("mciGetErrorStringA");
-	pfnAheadLib_mciGetErrorStringW = GetAddress("mciGetErrorStringW");
-	pfnAheadLib_mciGetYieldProc = GetAddress("mciGetYieldProc");
-	pfnAheadLib_mciLoadCommandResource = GetAddress("mciLoadCommandResource");
-	pfnAheadLib_mciSendCommandA = GetAddress("mciSendCommandA");
-	pfnAheadLib_mciSendCommandW = GetAddress("mciSendCommandW");
-	pfnAheadLib_mciSendStringA = GetAddress("mciSendStringA");
-	pfnAheadLib_mciSendStringW = GetAddress("mciSendStringW");
-	pfnAheadLib_mciSetDriverData = GetAddress("mciSetDriverData");
-	pfnAheadLib_mciSetYieldProc = GetAddress("mciSetYieldProc");
-	pfnAheadLib_midiConnect = GetAddress("midiConnect");
-	pfnAheadLib_midiDisconnect = GetAddress("midiDisconnect");
-	pfnAheadLib_midiInAddBuffer = GetAddress("midiInAddBuffer");
-	pfnAheadLib_midiInClose = GetAddress("midiInClose");
-	pfnAheadLib_midiInGetDevCapsA = GetAddress("midiInGetDevCapsA");
-	pfnAheadLib_midiInGetDevCapsW = GetAddress("midiInGetDevCapsW");
-	pfnAheadLib_midiInGetErrorTextA = GetAddress("midiInGetErrorTextA");
-	pfnAheadLib_midiInGetErrorTextW = GetAddress("midiInGetErrorTextW");
-	pfnAheadLib_midiInGetID = GetAddress("midiInGetID");
-	pfnAheadLib_midiInGetNumDevs = GetAddress("midiInGetNumDevs");
-	pfnAheadLib_midiInMessage = GetAddress("midiInMessage");
-	pfnAheadLib_midiInOpen = GetAddress("midiInOpen");
-	pfnAheadLib_midiInPrepareHeader = GetAddress("midiInPrepareHeader");
-	pfnAheadLib_midiInReset = GetAddress("midiInReset");
-	pfnAheadLib_midiInStart = GetAddress("midiInStart");
-	pfnAheadLib_midiInStop = GetAddress("midiInStop");
-	pfnAheadLib_midiInUnprepareHeader = GetAddress("midiInUnprepareHeader");
-	pfnAheadLib_midiOutCacheDrumPatches = GetAddress("midiOutCacheDrumPatches");
-	pfnAheadLib_midiOutCachePatches = GetAddress("midiOutCachePatches");
-	pfnAheadLib_midiOutClose = GetAddress("midiOutClose");
-	pfnAheadLib_midiOutGetDevCapsA = GetAddress("midiOutGetDevCapsA");
-	pfnAheadLib_midiOutGetDevCapsW = GetAddress("midiOutGetDevCapsW");
-	pfnAheadLib_midiOutGetErrorTextA = GetAddress("midiOutGetErrorTextA");
-	pfnAheadLib_midiOutGetErrorTextW = GetAddress("midiOutGetErrorTextW");
-	pfnAheadLib_midiOutGetID = GetAddress("midiOutGetID");
-	pfnAheadLib_midiOutGetNumDevs = GetAddress("midiOutGetNumDevs");
-	pfnAheadLib_midiOutGetVolume = GetAddress("midiOutGetVolume");
-	pfnAheadLib_midiOutLongMsg = GetAddress("midiOutLongMsg");
-	pfnAheadLib_midiOutMessage = GetAddress("midiOutMessage");
-	pfnAheadLib_midiOutOpen = GetAddress("midiOutOpen");
-	pfnAheadLib_midiOutPrepareHeader = GetAddress("midiOutPrepareHeader");
-	pfnAheadLib_midiOutReset = GetAddress("midiOutReset");
-	pfnAheadLib_midiOutSetVolume = GetAddress("midiOutSetVolume");
-	pfnAheadLib_midiOutShortMsg = GetAddress("midiOutShortMsg");
-	pfnAheadLib_midiOutUnprepareHeader = GetAddress("midiOutUnprepareHeader");
-	pfnAheadLib_midiStreamClose = GetAddress("midiStreamClose");
-	pfnAheadLib_midiStreamOpen = GetAddress("midiStreamOpen");
-	pfnAheadLib_midiStreamOut = GetAddress("midiStreamOut");
-	pfnAheadLib_midiStreamPause = GetAddress("midiStreamPause");
-	pfnAheadLib_midiStreamPosition = GetAddress("midiStreamPosition");
-	pfnAheadLib_midiStreamProperty = GetAddress("midiStreamProperty");
-	pfnAheadLib_midiStreamRestart = GetAddress("midiStreamRestart");
-	pfnAheadLib_midiStreamStop = GetAddress("midiStreamStop");
-	pfnAheadLib_mixerClose = GetAddress("mixerClose");
-	pfnAheadLib_mixerGetControlDetailsA = GetAddress("mixerGetControlDetailsA");
-	pfnAheadLib_mixerGetControlDetailsW = GetAddress("mixerGetControlDetailsW");
-	pfnAheadLib_mixerGetDevCapsA = GetAddress("mixerGetDevCapsA");
-	pfnAheadLib_mixerGetDevCapsW = GetAddress("mixerGetDevCapsW");
-	pfnAheadLib_mixerGetID = GetAddress("mixerGetID");
-	pfnAheadLib_mixerGetLineControlsA = GetAddress("mixerGetLineControlsA");
-	pfnAheadLib_mixerGetLineControlsW = GetAddress("mixerGetLineControlsW");
-	pfnAheadLib_mixerGetLineInfoA = GetAddress("mixerGetLineInfoA");
-	pfnAheadLib_mixerGetLineInfoW = GetAddress("mixerGetLineInfoW");
-	pfnAheadLib_mixerGetNumDevs = GetAddress("mixerGetNumDevs");
-	pfnAheadLib_mixerMessage = GetAddress("mixerMessage");
-	pfnAheadLib_mixerOpen = GetAddress("mixerOpen");
-	pfnAheadLib_mixerSetControlDetails = GetAddress("mixerSetControlDetails");
-	pfnAheadLib_mmDrvInstall = GetAddress("mmDrvInstall");
-	pfnAheadLib_mmGetCurrentTask = GetAddress("mmGetCurrentTask");
-	pfnAheadLib_mmTaskBlock = GetAddress("mmTaskBlock");
-	pfnAheadLib_mmTaskCreate = GetAddress("mmTaskCreate");
-	pfnAheadLib_mmTaskSignal = GetAddress("mmTaskSignal");
-	pfnAheadLib_mmTaskYield = GetAddress("mmTaskYield");
-	pfnAheadLib_mmioAdvance = GetAddress("mmioAdvance");
-	pfnAheadLib_mmioAscend = GetAddress("mmioAscend");
-	pfnAheadLib_mmioClose = GetAddress("mmioClose");
-	pfnAheadLib_mmioCreateChunk = GetAddress("mmioCreateChunk");
-	pfnAheadLib_mmioDescend = GetAddress("mmioDescend");
-	pfnAheadLib_mmioFlush = GetAddress("mmioFlush");
-	pfnAheadLib_mmioGetInfo = GetAddress("mmioGetInfo");
-	pfnAheadLib_mmioInstallIOProcA = GetAddress("mmioInstallIOProcA");
-	pfnAheadLib_mmioInstallIOProcW = GetAddress("mmioInstallIOProcW");
-	pfnAheadLib_mmioOpenA = GetAddress("mmioOpenA");
-	pfnAheadLib_mmioOpenW = GetAddress("mmioOpenW");
-	pfnAheadLib_mmioRead = GetAddress("mmioRead");
-	pfnAheadLib_mmioRenameA = GetAddress("mmioRenameA");
-	pfnAheadLib_mmioRenameW = GetAddress("mmioRenameW");
-	pfnAheadLib_mmioSeek = GetAddress("mmioSeek");
-	pfnAheadLib_mmioSendMessage = GetAddress("mmioSendMessage");
-	pfnAheadLib_mmioSetBuffer = GetAddress("mmioSetBuffer");
-	pfnAheadLib_mmioSetInfo = GetAddress("mmioSetInfo");
-	pfnAheadLib_mmioStringToFOURCCA = GetAddress("mmioStringToFOURCCA");
-	pfnAheadLib_mmioStringToFOURCCW = GetAddress("mmioStringToFOURCCW");
-	pfnAheadLib_mmioWrite = GetAddress("mmioWrite");
-	pfnAheadLib_mmsystemGetVersion = GetAddress("mmsystemGetVersion");
-	pfnAheadLib_sndPlaySoundA = GetAddress("sndPlaySoundA");
-	pfnAheadLib_sndPlaySoundW = GetAddress("sndPlaySoundW");
-	pfnAheadLib_timeBeginPeriod = GetAddress("timeBeginPeriod");
-	pfnAheadLib_timeEndPeriod = GetAddress("timeEndPeriod");
-	pfnAheadLib_timeGetDevCaps = GetAddress("timeGetDevCaps");
-	pfnAheadLib_timeGetSystemTime = GetAddress("timeGetSystemTime");
-	pfnAheadLib_timeGetTime = GetAddress("timeGetTime");
-	pfnAheadLib_timeKillEvent = GetAddress("timeKillEvent");
-	pfnAheadLib_timeSetEvent = GetAddress("timeSetEvent");
-	pfnAheadLib_waveInAddBuffer = GetAddress("waveInAddBuffer");
-	pfnAheadLib_waveInClose = GetAddress("waveInClose");
-	pfnAheadLib_waveInGetDevCapsA = GetAddress("waveInGetDevCapsA");
-	pfnAheadLib_waveInGetDevCapsW = GetAddress("waveInGetDevCapsW");
-	pfnAheadLib_waveInGetErrorTextA = GetAddress("waveInGetErrorTextA");
-	pfnAheadLib_waveInGetErrorTextW = GetAddress("waveInGetErrorTextW");
-	pfnAheadLib_waveInGetID = GetAddress("waveInGetID");
-	pfnAheadLib_waveInGetNumDevs = GetAddress("waveInGetNumDevs");
-	pfnAheadLib_waveInGetPosition = GetAddress("waveInGetPosition");
-	pfnAheadLib_waveInMessage = GetAddress("waveInMessage");
-	pfnAheadLib_waveInOpen = GetAddress("waveInOpen");
-	pfnAheadLib_waveInPrepareHeader = GetAddress("waveInPrepareHeader");
-	pfnAheadLib_waveInReset = GetAddress("waveInReset");
-	pfnAheadLib_waveInStart = GetAddress("waveInStart");
-	pfnAheadLib_waveInStop = GetAddress("waveInStop");
-	pfnAheadLib_waveInUnprepareHeader = GetAddress("waveInUnprepareHeader");
-	pfnAheadLib_waveOutBreakLoop = GetAddress("waveOutBreakLoop");
-	pfnAheadLib_waveOutClose = GetAddress("waveOutClose");
-	pfnAheadLib_waveOutGetDevCapsA = GetAddress("waveOutGetDevCapsA");
-	pfnAheadLib_waveOutGetDevCapsW = GetAddress("waveOutGetDevCapsW");
-	pfnAheadLib_waveOutGetErrorTextA = GetAddress("waveOutGetErrorTextA");
-	pfnAheadLib_waveOutGetErrorTextW = GetAddress("waveOutGetErrorTextW");
-	pfnAheadLib_waveOutGetID = GetAddress("waveOutGetID");
-	pfnAheadLib_waveOutGetNumDevs = GetAddress("waveOutGetNumDevs");
-	pfnAheadLib_waveOutGetPitch = GetAddress("waveOutGetPitch");
-	pfnAheadLib_waveOutGetPlaybackRate = GetAddress("waveOutGetPlaybackRate");
-	pfnAheadLib_waveOutGetPosition = GetAddress("waveOutGetPosition");
-	pfnAheadLib_waveOutGetVolume = GetAddress("waveOutGetVolume");
-	pfnAheadLib_waveOutMessage = GetAddress("waveOutMessage");
-	pfnAheadLib_waveOutOpen = GetAddress("waveOutOpen");
-	pfnAheadLib_waveOutPause = GetAddress("waveOutPause");
-	pfnAheadLib_waveOutPrepareHeader = GetAddress("waveOutPrepareHeader");
-	pfnAheadLib_waveOutReset = GetAddress("waveOutReset");
-	pfnAheadLib_waveOutRestart = GetAddress("waveOutRestart");
-	pfnAheadLib_waveOutSetPitch = GetAddress("waveOutSetPitch");
-	pfnAheadLib_waveOutSetPlaybackRate = GetAddress("waveOutSetPlaybackRate");
-	pfnAheadLib_waveOutSetVolume = GetAddress("waveOutSetVolume");
-	pfnAheadLib_waveOutUnprepareHeader = GetAddress("waveOutUnprepareHeader");
-	pfnAheadLib_waveOutWrite = GetAddress("waveOutWrite");
-	return TRUE;
+    pfnAheadLib_Unnamed2 = GetAddress(MAKEINTRESOURCEA(2));
+    pfnAheadLib_mciExecute = GetAddress("mciExecute");
+    pfnAheadLib_CloseDriver = GetAddress("CloseDriver");
+    pfnAheadLib_DefDriverProc = GetAddress("DefDriverProc");
+    pfnAheadLib_DriverCallback = GetAddress("DriverCallback");
+    pfnAheadLib_DrvGetModuleHandle = GetAddress("DrvGetModuleHandle");
+    pfnAheadLib_GetDriverModuleHandle = GetAddress("GetDriverModuleHandle");
+    pfnAheadLib_OpenDriver = GetAddress("OpenDriver");
+    pfnAheadLib_PlaySound = GetAddress("PlaySound");
+    pfnAheadLib_PlaySoundA = GetAddress("PlaySoundA");
+    pfnAheadLib_PlaySoundW = GetAddress("PlaySoundW");
+    pfnAheadLib_SendDriverMessage = GetAddress("SendDriverMessage");
+    pfnAheadLib_WOWAppExit = GetAddress("WOWAppExit");
+    pfnAheadLib_auxGetDevCapsA = GetAddress("auxGetDevCapsA");
+    pfnAheadLib_auxGetDevCapsW = GetAddress("auxGetDevCapsW");
+    pfnAheadLib_auxGetNumDevs = GetAddress("auxGetNumDevs");
+    pfnAheadLib_auxGetVolume = GetAddress("auxGetVolume");
+    pfnAheadLib_auxOutMessage = GetAddress("auxOutMessage");
+    pfnAheadLib_auxSetVolume = GetAddress("auxSetVolume");
+    pfnAheadLib_joyConfigChanged = GetAddress("joyConfigChanged");
+    pfnAheadLib_joyGetDevCapsA = GetAddress("joyGetDevCapsA");
+    pfnAheadLib_joyGetDevCapsW = GetAddress("joyGetDevCapsW");
+    pfnAheadLib_joyGetNumDevs = GetAddress("joyGetNumDevs");
+    pfnAheadLib_joyGetPos = GetAddress("joyGetPos");
+    pfnAheadLib_joyGetPosEx = GetAddress("joyGetPosEx");
+    pfnAheadLib_joyGetThreshold = GetAddress("joyGetThreshold");
+    pfnAheadLib_joyReleaseCapture = GetAddress("joyReleaseCapture");
+    pfnAheadLib_joySetCapture = GetAddress("joySetCapture");
+    pfnAheadLib_joySetThreshold = GetAddress("joySetThreshold");
+    pfnAheadLib_mciDriverNotify = GetAddress("mciDriverNotify");
+    pfnAheadLib_mciDriverYield = GetAddress("mciDriverYield");
+    pfnAheadLib_mciFreeCommandResource = GetAddress("mciFreeCommandResource");
+    pfnAheadLib_mciGetCreatorTask = GetAddress("mciGetCreatorTask");
+    pfnAheadLib_mciGetDeviceIDA = GetAddress("mciGetDeviceIDA");
+    pfnAheadLib_mciGetDeviceIDFromElementIDA = GetAddress("mciGetDeviceIDFromElementIDA");
+    pfnAheadLib_mciGetDeviceIDFromElementIDW = GetAddress("mciGetDeviceIDFromElementIDW");
+    pfnAheadLib_mciGetDeviceIDW = GetAddress("mciGetDeviceIDW");
+    pfnAheadLib_mciGetDriverData = GetAddress("mciGetDriverData");
+    pfnAheadLib_mciGetErrorStringA = GetAddress("mciGetErrorStringA");
+    pfnAheadLib_mciGetErrorStringW = GetAddress("mciGetErrorStringW");
+    pfnAheadLib_mciGetYieldProc = GetAddress("mciGetYieldProc");
+    pfnAheadLib_mciLoadCommandResource = GetAddress("mciLoadCommandResource");
+    pfnAheadLib_mciSendCommandA = GetAddress("mciSendCommandA");
+    pfnAheadLib_mciSendCommandW = GetAddress("mciSendCommandW");
+    pfnAheadLib_mciSendStringA = GetAddress("mciSendStringA");
+    pfnAheadLib_mciSendStringW = GetAddress("mciSendStringW");
+    pfnAheadLib_mciSetDriverData = GetAddress("mciSetDriverData");
+    pfnAheadLib_mciSetYieldProc = GetAddress("mciSetYieldProc");
+    pfnAheadLib_midiConnect = GetAddress("midiConnect");
+    pfnAheadLib_midiDisconnect = GetAddress("midiDisconnect");
+    pfnAheadLib_midiInAddBuffer = GetAddress("midiInAddBuffer");
+    pfnAheadLib_midiInClose = GetAddress("midiInClose");
+    pfnAheadLib_midiInGetDevCapsA = GetAddress("midiInGetDevCapsA");
+    pfnAheadLib_midiInGetDevCapsW = GetAddress("midiInGetDevCapsW");
+    pfnAheadLib_midiInGetErrorTextA = GetAddress("midiInGetErrorTextA");
+    pfnAheadLib_midiInGetErrorTextW = GetAddress("midiInGetErrorTextW");
+    pfnAheadLib_midiInGetID = GetAddress("midiInGetID");
+    pfnAheadLib_midiInGetNumDevs = GetAddress("midiInGetNumDevs");
+    pfnAheadLib_midiInMessage = GetAddress("midiInMessage");
+    pfnAheadLib_midiInOpen = GetAddress("midiInOpen");
+    pfnAheadLib_midiInPrepareHeader = GetAddress("midiInPrepareHeader");
+    pfnAheadLib_midiInReset = GetAddress("midiInReset");
+    pfnAheadLib_midiInStart = GetAddress("midiInStart");
+    pfnAheadLib_midiInStop = GetAddress("midiInStop");
+    pfnAheadLib_midiInUnprepareHeader = GetAddress("midiInUnprepareHeader");
+    pfnAheadLib_midiOutCacheDrumPatches = GetAddress("midiOutCacheDrumPatches");
+    pfnAheadLib_midiOutCachePatches = GetAddress("midiOutCachePatches");
+    pfnAheadLib_midiOutClose = GetAddress("midiOutClose");
+    pfnAheadLib_midiOutGetDevCapsA = GetAddress("midiOutGetDevCapsA");
+    pfnAheadLib_midiOutGetDevCapsW = GetAddress("midiOutGetDevCapsW");
+    pfnAheadLib_midiOutGetErrorTextA = GetAddress("midiOutGetErrorTextA");
+    pfnAheadLib_midiOutGetErrorTextW = GetAddress("midiOutGetErrorTextW");
+    pfnAheadLib_midiOutGetID = GetAddress("midiOutGetID");
+    pfnAheadLib_midiOutGetNumDevs = GetAddress("midiOutGetNumDevs");
+    pfnAheadLib_midiOutGetVolume = GetAddress("midiOutGetVolume");
+    pfnAheadLib_midiOutLongMsg = GetAddress("midiOutLongMsg");
+    pfnAheadLib_midiOutMessage = GetAddress("midiOutMessage");
+    pfnAheadLib_midiOutOpen = GetAddress("midiOutOpen");
+    pfnAheadLib_midiOutPrepareHeader = GetAddress("midiOutPrepareHeader");
+    pfnAheadLib_midiOutReset = GetAddress("midiOutReset");
+    pfnAheadLib_midiOutSetVolume = GetAddress("midiOutSetVolume");
+    pfnAheadLib_midiOutShortMsg = GetAddress("midiOutShortMsg");
+    pfnAheadLib_midiOutUnprepareHeader = GetAddress("midiOutUnprepareHeader");
+    pfnAheadLib_midiStreamClose = GetAddress("midiStreamClose");
+    pfnAheadLib_midiStreamOpen = GetAddress("midiStreamOpen");
+    pfnAheadLib_midiStreamOut = GetAddress("midiStreamOut");
+    pfnAheadLib_midiStreamPause = GetAddress("midiStreamPause");
+    pfnAheadLib_midiStreamPosition = GetAddress("midiStreamPosition");
+    pfnAheadLib_midiStreamProperty = GetAddress("midiStreamProperty");
+    pfnAheadLib_midiStreamRestart = GetAddress("midiStreamRestart");
+    pfnAheadLib_midiStreamStop = GetAddress("midiStreamStop");
+    pfnAheadLib_mixerClose = GetAddress("mixerClose");
+    pfnAheadLib_mixerGetControlDetailsA = GetAddress("mixerGetControlDetailsA");
+    pfnAheadLib_mixerGetControlDetailsW = GetAddress("mixerGetControlDetailsW");
+    pfnAheadLib_mixerGetDevCapsA = GetAddress("mixerGetDevCapsA");
+    pfnAheadLib_mixerGetDevCapsW = GetAddress("mixerGetDevCapsW");
+    pfnAheadLib_mixerGetID = GetAddress("mixerGetID");
+    pfnAheadLib_mixerGetLineControlsA = GetAddress("mixerGetLineControlsA");
+    pfnAheadLib_mixerGetLineControlsW = GetAddress("mixerGetLineControlsW");
+    pfnAheadLib_mixerGetLineInfoA = GetAddress("mixerGetLineInfoA");
+    pfnAheadLib_mixerGetLineInfoW = GetAddress("mixerGetLineInfoW");
+    pfnAheadLib_mixerGetNumDevs = GetAddress("mixerGetNumDevs");
+    pfnAheadLib_mixerMessage = GetAddress("mixerMessage");
+    pfnAheadLib_mixerOpen = GetAddress("mixerOpen");
+    pfnAheadLib_mixerSetControlDetails = GetAddress("mixerSetControlDetails");
+    pfnAheadLib_mmDrvInstall = GetAddress("mmDrvInstall");
+    pfnAheadLib_mmGetCurrentTask = GetAddress("mmGetCurrentTask");
+    pfnAheadLib_mmTaskBlock = GetAddress("mmTaskBlock");
+    pfnAheadLib_mmTaskCreate = GetAddress("mmTaskCreate");
+    pfnAheadLib_mmTaskSignal = GetAddress("mmTaskSignal");
+    pfnAheadLib_mmTaskYield = GetAddress("mmTaskYield");
+    pfnAheadLib_mmioAdvance = GetAddress("mmioAdvance");
+    pfnAheadLib_mmioAscend = GetAddress("mmioAscend");
+    pfnAheadLib_mmioClose = GetAddress("mmioClose");
+    pfnAheadLib_mmioCreateChunk = GetAddress("mmioCreateChunk");
+    pfnAheadLib_mmioDescend = GetAddress("mmioDescend");
+    pfnAheadLib_mmioFlush = GetAddress("mmioFlush");
+    pfnAheadLib_mmioGetInfo = GetAddress("mmioGetInfo");
+    pfnAheadLib_mmioInstallIOProcA = GetAddress("mmioInstallIOProcA");
+    pfnAheadLib_mmioInstallIOProcW = GetAddress("mmioInstallIOProcW");
+    pfnAheadLib_mmioOpenA = GetAddress("mmioOpenA");
+    pfnAheadLib_mmioOpenW = GetAddress("mmioOpenW");
+    pfnAheadLib_mmioRead = GetAddress("mmioRead");
+    pfnAheadLib_mmioRenameA = GetAddress("mmioRenameA");
+    pfnAheadLib_mmioRenameW = GetAddress("mmioRenameW");
+    pfnAheadLib_mmioSeek = GetAddress("mmioSeek");
+    pfnAheadLib_mmioSendMessage = GetAddress("mmioSendMessage");
+    pfnAheadLib_mmioSetBuffer = GetAddress("mmioSetBuffer");
+    pfnAheadLib_mmioSetInfo = GetAddress("mmioSetInfo");
+    pfnAheadLib_mmioStringToFOURCCA = GetAddress("mmioStringToFOURCCA");
+    pfnAheadLib_mmioStringToFOURCCW = GetAddress("mmioStringToFOURCCW");
+    pfnAheadLib_mmioWrite = GetAddress("mmioWrite");
+    pfnAheadLib_mmsystemGetVersion = GetAddress("mmsystemGetVersion");
+    pfnAheadLib_sndPlaySoundA = GetAddress("sndPlaySoundA");
+    pfnAheadLib_sndPlaySoundW = GetAddress("sndPlaySoundW");
+    pfnAheadLib_timeBeginPeriod = GetAddress("timeBeginPeriod");
+    pfnAheadLib_timeEndPeriod = GetAddress("timeEndPeriod");
+    pfnAheadLib_timeGetDevCaps = GetAddress("timeGetDevCaps");
+    pfnAheadLib_timeGetSystemTime = GetAddress("timeGetSystemTime");
+    pfnAheadLib_timeGetTime = GetAddress("timeGetTime");
+    pfnAheadLib_timeKillEvent = GetAddress("timeKillEvent");
+    pfnAheadLib_timeSetEvent = GetAddress("timeSetEvent");
+    pfnAheadLib_waveInAddBuffer = GetAddress("waveInAddBuffer");
+    pfnAheadLib_waveInClose = GetAddress("waveInClose");
+    pfnAheadLib_waveInGetDevCapsA = GetAddress("waveInGetDevCapsA");
+    pfnAheadLib_waveInGetDevCapsW = GetAddress("waveInGetDevCapsW");
+    pfnAheadLib_waveInGetErrorTextA = GetAddress("waveInGetErrorTextA");
+    pfnAheadLib_waveInGetErrorTextW = GetAddress("waveInGetErrorTextW");
+    pfnAheadLib_waveInGetID = GetAddress("waveInGetID");
+    pfnAheadLib_waveInGetNumDevs = GetAddress("waveInGetNumDevs");
+    pfnAheadLib_waveInGetPosition = GetAddress("waveInGetPosition");
+    pfnAheadLib_waveInMessage = GetAddress("waveInMessage");
+    pfnAheadLib_waveInOpen = GetAddress("waveInOpen");
+    pfnAheadLib_waveInPrepareHeader = GetAddress("waveInPrepareHeader");
+    pfnAheadLib_waveInReset = GetAddress("waveInReset");
+    pfnAheadLib_waveInStart = GetAddress("waveInStart");
+    pfnAheadLib_waveInStop = GetAddress("waveInStop");
+    pfnAheadLib_waveInUnprepareHeader = GetAddress("waveInUnprepareHeader");
+    pfnAheadLib_waveOutBreakLoop = GetAddress("waveOutBreakLoop");
+    pfnAheadLib_waveOutClose = GetAddress("waveOutClose");
+    pfnAheadLib_waveOutGetDevCapsA = GetAddress("waveOutGetDevCapsA");
+    pfnAheadLib_waveOutGetDevCapsW = GetAddress("waveOutGetDevCapsW");
+    pfnAheadLib_waveOutGetErrorTextA = GetAddress("waveOutGetErrorTextA");
+    pfnAheadLib_waveOutGetErrorTextW = GetAddress("waveOutGetErrorTextW");
+    pfnAheadLib_waveOutGetID = GetAddress("waveOutGetID");
+    pfnAheadLib_waveOutGetNumDevs = GetAddress("waveOutGetNumDevs");
+    pfnAheadLib_waveOutGetPitch = GetAddress("waveOutGetPitch");
+    pfnAheadLib_waveOutGetPlaybackRate = GetAddress("waveOutGetPlaybackRate");
+    pfnAheadLib_waveOutGetPosition = GetAddress("waveOutGetPosition");
+    pfnAheadLib_waveOutGetVolume = GetAddress("waveOutGetVolume");
+    pfnAheadLib_waveOutMessage = GetAddress("waveOutMessage");
+    pfnAheadLib_waveOutOpen = GetAddress("waveOutOpen");
+    pfnAheadLib_waveOutPause = GetAddress("waveOutPause");
+    pfnAheadLib_waveOutPrepareHeader = GetAddress("waveOutPrepareHeader");
+    pfnAheadLib_waveOutReset = GetAddress("waveOutReset");
+    pfnAheadLib_waveOutRestart = GetAddress("waveOutRestart");
+    pfnAheadLib_waveOutSetPitch = GetAddress("waveOutSetPitch");
+    pfnAheadLib_waveOutSetPlaybackRate = GetAddress("waveOutSetPlaybackRate");
+    pfnAheadLib_waveOutSetVolume = GetAddress("waveOutSetVolume");
+    pfnAheadLib_waveOutUnprepareHeader = GetAddress("waveOutUnprepareHeader");
+    pfnAheadLib_waveOutWrite = GetAddress("waveOutWrite");
+    return TRUE;
 }
 
 #include "library.h"
@@ -623,33 +623,23 @@ BOOL WINAPI Init()
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD dwReason, PVOID pvReserved)
 {
-	if (dwReason == DLL_PROCESS_ATTACH)
-	{
-		DisableThreadLibraryCalls(hModule);
+    if (dwReason == DLL_PROCESS_ATTACH)
+    {
+        DisableThreadLibraryCalls(hModule);
 
-		if (Load() && Init())
-		{
-			TCHAR szAppName[MAX_PATH] = TEXT("java.exe");
-			TCHAR szAppName1[MAX_PATH] = TEXT("javaw.exe");
-			TCHAR szCurName[MAX_PATH];
+        if (Load() && Init())
+        {
+            HANDLE hThread = CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)hello, NULL, NULL, NULL);
+            if (hThread)
+            {
+                CloseHandle(hThread);
+            }
+        }
+    }
+    else if (dwReason == DLL_PROCESS_DETACH)
+    {
+        Free();
+    }
 
-			GetModuleFileName(NULL, szCurName, MAX_PATH);
-			PathStripPath(szCurName);
-
-			if (StrCmpI(szCurName, szAppName) == 0 || StrCmpI(szCurName, szAppName1) == 0)
-			{
-				HANDLE hThread = CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)hello, NULL, NULL, NULL);
-				if (hThread)
-				{
-					CloseHandle(hThread);
-				}
-			}
-		}
-	}
-	else if (dwReason == DLL_PROCESS_DETACH)
-	{
-		Free();
-	}
-
-	return TRUE;
+    return TRUE;
 }

@@ -7,35 +7,59 @@
 #include "features/feature_manager.h"
 #include "hooks/hook_manager.h"
 #include "environment.h"
+#include "resources.h"
 #include "titan_hook.h"
 #include "utils/converts.h"
 #include "utils/jvm_utility.h"
-
 
 
 void init(JavaVM* vm)
 {
     env::g_jvm = vm;
     logger::log("[env] &a JavaVM*: &e", env::g_jvm);
-    if (const auto vm = env::g_jvm; vm->GetEnv(reinterpret_cast<void**>(&env::g_env), JNI_VERSION_1_8) != JNI_OK)
-    {
-        if (vm->AttachCurrentThread(reinterpret_cast<void**>(&env::g_env), nullptr) == JNI_OK)
-        {
-            const auto jni_tools = utils::jvm_utility::get_jni_tools(env::g_env);
-            env::g_jvmti_env = std::get<0>(jni_tools);
-            logger::log("[env] &a JNIEnv*: &e", env::g_env);
-            logger::log("[env] &a jvmtiEnv*: &e", env::g_jvmti_env);
-            logger::log("[666] &a initializing features.");
 
-            env::hook_manager.init();
-            env::feature_manager.init();
-        }
+    JNIEnv* jniEnv = nullptr;
+    jvmtiEnv* jti = nullptr;
+
+    // obtain JNIENV pointer
+    jint result = vm->GetEnv(reinterpret_cast<void**>(&jniEnv), JNI_VERSION_1_6);
+    if (result == JNI_EDETACHED)
+        result = vm->AttachCurrentThread(reinterpret_cast<void**>(&jniEnv), nullptr);
+    if (result != JNI_OK)
+    {
+        logger::log("[env] &c failed to obtain jni env.");
+        return;
     }
+
+    if (vm->GetEnv(reinterpret_cast<void**>(&jti), JVMTI_VERSION_1_2) != JNI_OK)
+    {
+        logger::log("[env] &c failed to obtain jvmti env.");
+        return;
+    }
+
+    env::g_jvmti_env = jti;
+    env::g_env = jniEnv;
+    logger::log("[env] &a jvmtiEnv*: &e", env::g_jvmti_env);
+    logger::log("[env] &a initializing features.");
+
+    env::hook_manager.init();
+    env::feature_manager.init();
 }
 
 void hello()
 {
     logger::WriteRainbowLine("bbbbb!??");
+
+    int counts = 0;
+    while (counts < 20)
+    {
+        if (GetModuleHandle("jvm.dll") != nullptr)
+        {
+            break;
+        }
+        counts++;
+        Sleep(50);
+    }
 
     if (const auto jvm_handle = GetModuleHandle("jvm.dll"))
     {
@@ -61,5 +85,6 @@ void hello()
     else
     {
         logger::log("&c jvm.dll HMODULE not found, disabled.");
+        MessageBoxA(nullptr, "jvm.dll HMODULE not found, disabled.", "err",MB_OK);
     }
 }

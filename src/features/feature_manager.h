@@ -11,6 +11,7 @@
 
 #include "feature.h"
 #include "impl/crash_logger.h"
+#include "impl/jvmti.h"
 #include "logger/logger.h"
 
 
@@ -32,6 +33,7 @@ public:
     void init()
     {
         register_feature<crash_logger>();
+        register_feature<jvmti>();
 
         for (auto it = features.begin(); it != features.end(); ++it)
         {

@@ -32,6 +32,14 @@ set(INJECT_SOURCES
         src/features/impl/crash_logger.h
         src/utils/hex.h
         src/hooks/impl/load_library_hook.cpp
+        src/resources.h
+        src/features/impl/jvmti.cpp
+        src/features/impl/jvmti.h
+        src/utils/texts.h
+        src/transformers/transformers.h
+        src/native_definitions.hpp
+        src/resources/asm.h
+        src/utils/temps.h
 )
 
 add_library(winmm SHARED ${INJECT_SOURCES})
