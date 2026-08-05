@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="asm">
-    <output-path>$PROJECT_DIR$/out/artifacts/asm</output-path>
-    <root id="archive" name="asm.jar">
-      <element id="module-output" name="asm" />
-    </root>
-  </artifact>
-</component>
